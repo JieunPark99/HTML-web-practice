@@ -1,0 +1,72 @@
+@charset "EUC-KR";
+/*class이름에 접근할 땐 .class
+태그 이름에 접근할 땐 그냥 tag이름*/
+body{
+		font-family: Arial,Helvetica,sans-serif;
+	}
+.header{
+	padding:80px;
+	text-align:center;
+	background:#1abc9c;
+	color:white;
+}
+.header h1{
+	font-size:40px;
+}
+.navbar{
+	background-color:#333;
+	overflow:hidden;
+}
+.navbar a{
+	color:white;
+	float:left;
+	display:block;
+	text-align:center;
+	padding:14px 20px;/*웹꾸미기에 padding이 정말 중요!*/
+	text-decoration:none;/*remove underline*/
+}
+.navbar a.right{
+	float:right;/*text-align으로 바꾸는게 아니라 float를 이용하는구나!*/
+}
+.navbar a:hover{/*when mouse-over*/
+	background-color:#ddd;
+	color:black;
+}
+*{
+	/*content-box와 border-box의 차이*/
+	box-sizing:border-box;
+}
+.row{
+	/*flex관련 참고자료(생활코딩): https://studiomeal.com/archives/197*/
+	/*display:block(세로)과 display:flex(가로)의 차이점*/
+	display:flex;
+	flex-wrap:wrap;/*창 크기에 맞게 줄바꿈*/
+}
+.side{
+	flex:30%;/*set width of side bar*/
+	background-color:#f1f1f1;
+	padding:20px;
+}
+.main{
+	flex:70%;/*set width of main bar*/
+	background-color:white;
+	padding:20px;
+}
+.footer{
+	text-align:center;
+	background-color:#ddd;
+	padding:10px;
+}
+/*to look good on all devices(desktops,tablets,phones...etc*/
+@media screen and(max-width:700px){
+	.row{
+		flex-direction:column;
+	}
+}
+@media screen and(max-width:400px){
+	.navbar a{
+		float:none;
+		width:100%;
+	}
+
+}
